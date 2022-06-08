@@ -1,0 +1,38 @@
+
+<html>
+<body>
+<script type="text/javascript" charset="utf-8">
+    // function to check the string contains letters or not
+    function onlyLetters(str) {
+        return /^[a-zA-Z]+$/.test(str);
+    }
+    // function to count the frequency of character
+    function countStringSubstring(str, letter) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+    
+            // check if the character is at that position
+            if (str.charAt(i) == letter) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+    // taking inputs from user
+    const string = prompt('Enter a string1: ');
+    // checking the string is empty or not
+    if(string.length==0){
+        console.log("String is empty !");
+    }
+    // checking the string contains the letters and
+    // displaying the result
+    else if(onlyLetters(string)){
+        const checkSecondString = prompt('Enter a letter to check: ');
+        const result = countStringSubstring(string.toLowerCase(), checkSecondString);
+        console.log("Output:",result);
+    }else{
+        console.log("Enter only letters");
+    }
+</script>
+</body>
+</html>
